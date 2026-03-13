@@ -188,11 +188,9 @@ def submit_lead() -> str:
     return redirect(url_for("thank_you"))
 
 
+import os
+
 if __name__ == "__main__":
-    # Local setup:
-    # 1. python -m venv .venv
-    # 2. .venv\Scripts\activate
-    # 3. pip install -r requirements.txt
-    # 4. python app.py
     init_db()
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
