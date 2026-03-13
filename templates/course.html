@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury Asset Operator Program | JP Luxury Assets</title>
+    <meta
+      name="description"
+      content="Explore the Luxury Asset Operator Program and learn how to acquire, structure, operate, and monetize premium assets intelligently."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body data-page="{{ page_name }}">
+    <div class="site-shell">
+      <div class="ambient ambient-gold"></div>
+      <div class="ambient ambient-navy"></div>
+      <div class="noise-layer"></div>
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a class="brand" href="{{ url_for('home') }}">
+            <span class="brand-mark">JP</span>
+            <span class="brand-text"><strong>JP Luxury Assets</strong><em>Strategic Ownership Advisory</em></span>
+          </a>
+          <nav class="primary-nav">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('course') }}" class="is-active">Course</a>
+            <a href="{{ url_for('consultation') }}">Consultation</a>
+          </nav>
+          <a class="button button-gold desktop-only" href="#course-lead">Apply Now</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="subpage-hero section">
+          <div class="container subpage-hero-grid">
+            <div class="reveal">
+              <p class="eyebrow">Premium course</p>
+              <h1>The Luxury Asset Operator Program</h1>
+              <p class="hero-subhead">
+                Learn to acquire, structure, operate, and manage luxury assets with the rigor of a sophisticated owner.
+                This is education for aspirational buyers who value status, but insist on systems.
+              </p>
+              <div class="hero-cta">
+                <a class="button button-gold magnetic" href="#course-lead">Apply for Enrollment</a>
+                <a class="button button-ghost magnetic" href="{{ url_for('consultation') }}">Discuss Private Advisory</a>
+              </div>
+            </div>
+            <div class="frame-card reveal">
+              <p class="card-kicker">Program outcomes</p>
+              <ul class="checklist">
+                <li>Choose the right asset for your real use case</li>
+                <li>Understand ownership versus charter or fractional options</li>
+                <li>Build cost visibility and operating discipline</li>
+                <li>Reduce avoidable errors in structure, maintenance, and monetization</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container compare-grid">
+            <div class="panel-card reveal">
+              <h2>What the program covers</h2>
+              <ul>
+                <li>Luxury asset mindset and decision framework</li>
+                <li>Asset selection logic by lifestyle, brand, and utility goals</li>
+                <li>Acquisition, due diligence, and deal awareness</li>
+                <li>Legal structures, insurance, tax, and registration considerations</li>
+                <li>Operations, maintenance, staffing, vendors, and storage</li>
+                <li>Cost control, monetization planning, and long-term exit logic</li>
+              </ul>
+            </div>
+            <div class="panel-card reveal">
+              <h2>Who enrolls</h2>
+              <ul>
+                <li>Professionals preparing for first-time ownership</li>
+                <li>Entrepreneurs building a more elevated lifestyle with discipline</li>
+                <li>Current owners tightening their systems and cost controls</li>
+                <li>Investors evaluating prestige assets with commercial realism</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container modules reveal">
+            <article class="module-card"><span>Module 1</span><h3>Luxury Asset Mindset &amp; Strategy</h3></article>
+            <article class="module-card"><span>Module 2</span><h3>Choosing the Right Asset</h3></article>
+            <article class="module-card"><span>Module 3</span><h3>Acquisition &amp; Due Diligence</h3></article>
+            <article class="module-card"><span>Module 4</span><h3>Ownership Structures &amp; Legal Considerations</h3></article>
+            <article class="module-card"><span>Module 5</span><h3>Operations, Maintenance &amp; Vendors</h3></article>
+            <article class="module-card"><span>Module 6</span><h3>Cost Management &amp; Budgeting</h3></article>
+            <article class="module-card"><span>Module 7</span><h3>Monetization &amp; Asset Utilization</h3></article>
+            <article class="module-card"><span>Module 8</span><h3>Long-Term Wealth, Brand, and Exit Strategy</h3></article>
+          </div>
+        </section>
+
+        <section class="section band-callout reveal">
+          <div class="container band-content">
+            <div>
+              <p class="eyebrow">High-trust positioning</p>
+              <h2>This program is designed to prevent expensive enthusiasm from becoming expensive regret.</h2>
+            </div>
+            <a class="button button-ghost magnetic" href="{{ url_for('consultation') }}">Need Private Guidance?</a>
+          </div>
+        </section>
+
+        <section class="section lead-section" id="course-lead">
+          <div class="container lead-layout">
+            <div class="lead-copy reveal">
+              <p class="eyebrow">Enrollment inquiry</p>
+              <h2>Apply for the next premium intake.</h2>
+              <p>
+                Tell us what asset category you are focused on and what outcome you want from the program.
+                We use this to tailor the right next step and filter for fit.
+              </p>
+            </div>
+            <div class="form-shell reveal">
+              {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                  {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">{{ message }}</div>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
+              <form class="lead-form" action="{{ url_for('submit_lead') }}" method="post" novalidate>
+                <input type="hidden" name="source_page" value="course" />
+                <div class="field-grid">
+                  <label>Full name<input type="text" name="full_name" value="{{ form_data.full_name }}" required />{% if form_errors.full_name %}<small class="error-text">{{ form_errors.full_name }}</small>{% endif %}</label>
+                  <label>Email<input type="email" name="email" value="{{ form_data.email }}" required />{% if form_errors.email %}<small class="error-text">{{ form_errors.email }}</small>{% endif %}</label>
+                  <label>Phone<input type="tel" name="phone" value="{{ form_data.phone }}" required />{% if form_errors.phone %}<small class="error-text">{{ form_errors.phone }}</small>{% endif %}</label>
+                  <label>Asset interest<select name="asset_interest" required><option value="">Select an asset class</option><option value="Yacht / Boat" {% if form_data.asset_interest == 'Yacht / Boat' %}selected{% endif %}>Yacht / Boat</option><option value="Supercar" {% if form_data.asset_interest == 'Supercar' %}selected{% endif %}>Supercar</option><option value="Aircraft" {% if form_data.asset_interest == 'Aircraft' %}selected{% endif %}>Aircraft</option><option value="Luxury Property" {% if form_data.asset_interest == 'Luxury Property' %}selected{% endif %}>Luxury Property</option><option value="Collectible Asset" {% if form_data.asset_interest == 'Collectible Asset' %}selected{% endif %}>Collectible Asset</option><option value="Mixed Portfolio" {% if form_data.asset_interest == 'Mixed Portfolio' %}selected{% endif %}>Mixed Portfolio</option></select>{% if form_errors.asset_interest %}<small class="error-text">{{ form_errors.asset_interest }}</small>{% endif %}</label>
+                  <label>Budget range<select name="budget_range" required><option value="">Select a range</option><option value="$50k - $250k" {% if form_data.budget_range == '$50k - $250k' %}selected{% endif %}>$50k - $250k</option><option value="$250k - $1M" {% if form_data.budget_range == '$250k - $1M' %}selected{% endif %}>$250k - $1M</option><option value="$1M - $5M" {% if form_data.budget_range == '$1M - $5M' %}selected{% endif %}>$1M - $5M</option><option value="$5M - $15M" {% if form_data.budget_range == '$5M - $15M' %}selected{% endif %}>$5M - $15M</option><option value="$15M+" {% if form_data.budget_range == '$15M+' %}selected{% endif %}>$15M+</option></select>{% if form_errors.budget_range %}<small class="error-text">{{ form_errors.budget_range }}</small>{% endif %}</label>
+                  <label>Primary goal<select name="primary_goal" required><option value="">Select a goal</option><option value="Personal lifestyle" {% if form_data.primary_goal == 'Personal lifestyle' %}selected{% endif %}>Personal lifestyle</option><option value="Brand positioning" {% if form_data.primary_goal == 'Brand positioning' %}selected{% endif %}>Brand positioning</option><option value="Family legacy" {% if form_data.primary_goal == 'Family legacy' %}selected{% endif %}>Family legacy</option><option value="Monetization strategy" {% if form_data.primary_goal == 'Monetization strategy' %}selected{% endif %}>Monetization strategy</option><option value="Ownership education" {% if form_data.primary_goal == 'Ownership education' %}selected{% endif %}>Ownership education</option></select>{% if form_errors.primary_goal %}<small class="error-text">{{ form_errors.primary_goal }}</small>{% endif %}</label>
+                </div>
+                <label>Message<textarea name="message" rows="5" required>{{ form_data.message }}</textarea>{% if form_errors.message %}<small class="error-text">{{ form_errors.message }}</small>{% endif %}</label>
+                <button class="button button-gold button-full magnetic" type="submit">Apply for Enrollment</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-bottom single-line">
+          <span>&copy; 2026 JP Luxury Assets. All rights reserved.</span>
+          <a href="{{ url_for('home') }}">Return to Home</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>

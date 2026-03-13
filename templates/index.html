@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JP Luxury Assets | Strategic Ownership for Elite Assets</title>
+    <meta
+      name="description"
+      content="Luxury asset education and advisory for yachts, supercars, aircraft, property, and collectible assets. Learn to acquire, operate, and monetize with discipline."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body data-page="{{ page_name }}">
+    <div class="site-shell">
+      <div class="ambient ambient-gold"></div>
+      <div class="ambient ambient-navy"></div>
+      <div class="noise-layer"></div>
+
+      <header class="site-header" id="top">
+        <div class="container nav-bar">
+          <a class="brand" href="{{ url_for('home') }}">
+            <span class="brand-mark">JP</span>
+            <span class="brand-text">
+              <strong>JP Luxury Assets</strong>
+              <em>Strategic Ownership Advisory</em>
+            </span>
+          </a>
+
+          <nav class="primary-nav" aria-label="Primary">
+            <a href="#hero" data-navlink>Home</a>
+            <a href="#value" data-navlink>Why It Matters</a>
+            <a href="#course" data-navlink>Course</a>
+            <a href="#consulting" data-navlink>Consulting</a>
+            <a href="#faq" data-navlink>FAQ</a>
+            <a href="#lead-form" data-navlink>Apply</a>
+          </nav>
+
+          <div class="nav-actions">
+            <a class="button button-ghost desktop-only" href="{{ url_for('course') }}">View Course</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="mobile-nav" id="mobileNav">
+          <a href="#hero" data-navlink>Home</a>
+          <a href="#value" data-navlink>Why It Matters</a>
+          <a href="#course" data-navlink>Course</a>
+          <a href="#consulting" data-navlink>Consulting</a>
+          <a href="#faq" data-navlink>FAQ</a>
+          <a href="#lead-form" data-navlink>Apply</a>
+          <a href="{{ url_for('consultation') }}">Private Consultation</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero section" id="hero">
+          <div class="container hero-grid">
+            <div class="hero-copy reveal">
+              <p class="eyebrow">Disciplined luxury. Capital-aware ownership.</p>
+              <h1>Own Luxury Like an Operator, Not a Spectator.</h1>
+              <p class="hero-subhead">
+                Acquire prestige with control. Learn how yachts, supercars, aircraft, luxury property,
+                and collectible assets can become strategic lifestyle assets when structured, operated,
+                and monetized with intelligence.
+              </p>
+
+              <div class="hero-cta">
+                <a class="button button-gold magnetic" href="#course">Enroll in the Course</a>
+                <a class="button button-ghost magnetic" href="{{ url_for('consultation') }}">Book a Private Consultation</a>
+              </div>
+
+              <div class="hero-trust">
+                <div class="metric-panel">
+                  <span class="metric-value counter" data-target="8">0</span>
+                  <span class="metric-label">ownership models explained</span>
+                </div>
+                <div class="metric-panel">
+                  <span class="metric-value counter" data-target="27">0</span>
+                  <span class="metric-label">costly mistakes addressed</span>
+                </div>
+                <div class="metric-panel">
+                  <span class="metric-value counter" data-target="40">0</span>
+                  <span class="metric-label">systems, vendors, and controls covered</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual reveal" data-parallax>
+              <div class="hero-card frame-card">
+                <p class="card-kicker">Ownership Intelligence</p>
+                <h2>Luxury Assets. Strategic Ownership. Disciplined Management.</h2>
+                <p>
+                  Buying is only the visible moment. Intelligent ownership is built in the invisible layers:
+                  due diligence, operating budgets, structure, insurance, staffing, storage, utilization,
+                  and resale planning.
+                </p>
+                <div class="hero-badges">
+                  <span>Yachts</span>
+                  <span>Supercars</span>
+                  <span>Aircraft</span>
+                  <span>Property</span>
+                  <span>Collectibles</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section value-section" id="value">
+          <div class="container split-head reveal">
+            <div>
+              <p class="eyebrow">The strategic case</p>
+              <h2>Luxury assets can create access, leverage, and legacy, but only when they are structured correctly.</h2>
+            </div>
+            <p class="section-copy">
+              The right asset can elevate lifestyle, expand network proximity, create brand capital, and
+              unlock optional monetization. The wrong approach turns prestige into leakage. We teach strategic
+              ownership so aspiration is matched by systems, discipline, and financial clarity.
+            </p>
+          </div>
+
+          <div class="container card-grid five-up">
+            <article class="info-card reveal">
+              <h3>Status with substance</h3>
+              <p>Use premium assets to reinforce identity, executive presence, and reputation without becoming financially reckless.</p>
+            </article>
+            <article class="info-card reveal">
+              <h3>Relationship capital</h3>
+              <p>Create environments for clients, partners, and family where access and trust deepen naturally.</p>
+            </article>
+            <article class="info-card reveal">
+              <h3>Brand leverage</h3>
+              <p>Turn ownership into content, positioning, and story equity when aligned with a serious personal or business brand.</p>
+            </article>
+            <article class="info-card reveal">
+              <h3>Lifestyle freedom</h3>
+              <p>Enjoy mobility, privacy, and curated experience with operational discipline behind the scenes.</p>
+            </article>
+            <article class="info-card reveal">
+              <h3>Monetization optionality</h3>
+              <p>Evaluate chartering, leasing, rental, or event utilization through a sober operator lens rather than hope.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section band-callout reveal">
+          <div class="container band-content">
+            <div>
+              <p class="eyebrow">Prestige with control</p>
+              <h2>The dream is expensive. The mistakes are worse.</h2>
+            </div>
+            <a class="button button-gold magnetic" href="{{ url_for('course') }}">See the Program</a>
+          </div>
+        </section>
+
+        <section class="section consulting-section" id="consulting">
+          <div class="container consulting-layout">
+            <div class="consulting-copy reveal">
+              <p class="eyebrow">Private consulting</p>
+              <h2>Exclusive strategic advisory for buyers who prefer direct guidance.</h2>
+              <p>
+                For clients evaluating meaningful acquisitions, we offer a private consulting pathway focused on acquisition logic,
+                deal positioning, cost planning, operational setup, and monetization strategy. This is structured for serious decision-makers, not casual browsers.
+              </p>
+              <div class="exclusive-note">
+                <strong>Limited advisory capacity.</strong>
+                <span>Applications are reviewed to protect client discretion and service depth.</span>
+              </div>
+              <a class="button button-gold magnetic" href="{{ url_for('consultation') }}">Book a Private Consultation</a>
+            </div>
+
+            <div class="consulting-panel reveal">
+              <div class="consulting-item">
+                <h3>Best fit</h3>
+                <p>Yacht buyers, aviation aspirants, collectors, luxury property acquirers, and owners comparing charter versus purchase strategy.</p>
+              </div>
+              <div class="consulting-item">
+                <h3>Advisory scope</h3>
+                <p>Acquisition filters, operating budgets, service ecosystem mapping, ownership structures, risk awareness, and utilization planning.</p>
+              </div>
+              <div class="consulting-item">
+                <h3>Outcome</h3>
+                <p>A clearer, calmer path to ownership with stronger systems, sharper questions, and fewer expensive surprises.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section testimonials-section" id="testimonials">
+          <div class="container split-head reveal">
+            <div>
+              <p class="eyebrow">Client perspective</p>
+              <h2>Social proof from serious buyers and ambitious operators.</h2>
+            </div>
+            <p class="section-copy">
+              These placeholder testimonials are written to reflect the type of premium audience the brand serves: commercially aware,
+              aspirational, and unwilling to confuse luxury with impulsive spending.
+            </p>
+          </div>
+
+          <div class="container testimonial-slider reveal" id="testimonialSlider">
+            <article class="testimonial active">
+              <p>"I was close to buying the wrong yacht purely for the image. The framework shifted me from emotional buyer to disciplined owner."</p>
+              <h3>Daniel M.</h3>
+              <span>Entrepreneur</span>
+            </article>
+            <article class="testimonial">
+              <p>"The course gave me the operational side nobody talks about: staffing, maintenance, insurance, and utilization planning."</p>
+              <h3>Priya R.</h3>
+              <span>Private Equity Executive</span>
+            </article>
+            <article class="testimonial">
+              <p>"I stopped looking at luxury assets as trophies and started evaluating them as lifestyle, network, and brand infrastructure."</p>
+              <h3>Michael T.</h3>
+              <span>Investor</span>
+            </article>
+            <article class="testimonial">
+              <p>"As a first-time yacht buyer, I needed more than aspiration. I needed structure. This gave me a sober plan and saved real money."</p>
+              <h3>Elena S.</h3>
+              <span>First-Time Yacht Buyer</span>
+            </article>
+          </div>
+
+          <div class="container slider-controls reveal">
+            <button class="slider-button" id="prevTestimonial" type="button">Previous</button>
+            <button class="slider-button" id="nextTestimonial" type="button">Next</button>
+          </div>
+        </section>
+
+        <section class="section faq-section" id="faq">
+          <div class="container split-head reveal">
+            <div>
+              <p class="eyebrow">Frequently asked questions</p>
+              <h2>Clear answers for buyers pursuing prestige with intelligence.</h2>
+            </div>
+            <p class="section-copy">
+              The brand is intentionally grounded. We sell aspiration, but we do it through frameworks, controls, and commercially sharp decision-making.
+            </p>
+          </div>
+
+          <div class="container faq-list">
+            <article class="faq-item reveal">
+              <button class="faq-question" type="button">Is this only for ultra-rich buyers?</button>
+              <div class="faq-answer">
+                <p>No. It is for aspiring and current owners who want to understand the operating reality before making expensive decisions. The focus is disciplined preparation, not fantasy wealth signaling.</p>
+              </div>
+            </article>
+            <article class="faq-item reveal">
+              <button class="faq-question" type="button">Should I buy, charter, or go fractional?</button>
+              <div class="faq-answer">
+                <p>That depends on usage frequency, capital priorities, privacy requirements, and whether the asset serves lifestyle only or broader brand and access goals. The program helps you evaluate each path rationally.</p>
+              </div>
+            </article>
+            <article class="faq-item reveal">
+              <button class="faq-question" type="button">Can a luxury asset be monetized?</button>
+              <div class="faq-answer">
+                <p>In some cases, yes. Chartering, leasing, rental use, events, and content strategies can improve utilization, but monetization should be structured carefully and never assumed.</p>
+              </div>
+            </article>
+            <article class="faq-item reveal">
+              <button class="faq-question" type="button">How much do operating costs matter?</button>
+              <div class="faq-answer">
+                <p>They matter profoundly. Storage, crew, fuel, insurance, maintenance, tax exposure, and depreciation discipline often determine whether ownership feels empowering or burdensome.</p>
+              </div>
+            </article>
+            <article class="faq-item reveal">
+              <button class="faq-question" type="button">Is the course beginner friendly?</button>
+              <div class="faq-answer">
+                <p>Yes. It is designed for intelligent beginners as well as current owners who want better systems, more control, and sharper cost visibility.</p>
+              </div>
+            </article>
+            <article class="faq-item reveal">
+              <button class="faq-question" type="button">Do you offer private consulting?</button>
+              <div class="faq-answer">
+                <p>Yes. Private advisory is available for serious buyers who want support on acquisition, structure, operations, and ownership strategy. Capacity is intentionally limited.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="mistakes">
+          <div class="container split-head reveal">
+            <div>
+              <p class="eyebrow">Why people fail</p>
+              <h2>Most ownership failures begin long before the asset is delivered.</h2>
+            </div>
+            <p class="section-copy">
+              Buyers often fall in love with the symbol while ignoring the operating reality. The result is idle-time waste,
+              escalating maintenance, poor structure, insurance gaps, bad vendor management, and weak exit positioning.
+            </p>
+          </div>
+
+          <div class="container card-grid three-up">
+            <article class="mistake-card reveal">
+              <span>01</span>
+              <h3>Buying emotionally</h3>
+              <p>They choose ego, speed, or appearance before clarifying use case, ownership strategy, and lifecycle fit.</p>
+            </article>
+            <article class="mistake-card reveal">
+              <span>02</span>
+              <h3>Ignoring real operating cost</h3>
+              <p>They underestimate staffing, berthing, hangarage, storage, maintenance, insurance, and compliance overhead.</p>
+            </article>
+            <article class="mistake-card reveal">
+              <span>03</span>
+              <h3>No management system</h3>
+              <p>They own the asset, but not the operational framework required to protect capital and preserve experience quality.</p>
+            </article>
+            <article class="mistake-card reveal">
+              <span>04</span>
+              <h3>Weak legal and tax planning</h3>
+              <p>They skip structure, registration, jurisdiction analysis, and documentation review until risk becomes expensive.</p>
+            </article>
+            <article class="mistake-card reveal">
+              <span>05</span>
+              <h3>Idle-time waste</h3>
+              <p>They never plan utilization, chartering, rental, or strategic access models that could support ownership efficiency.</p>
+            </article>
+            <article class="mistake-card reveal">
+              <span>06</span>
+              <h3>Poor resale positioning</h3>
+              <p>They ignore service history, brand integrity, and handover readiness, which erodes confidence and future exit value.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="benefits">
+          <div class="container split-head reveal">
+            <div>
+              <p class="eyebrow">Ownership upside</p>
+              <h2>When managed intelligently, luxury ownership can become a lifestyle advantage with strategic depth.</h2>
+            </div>
+            <p class="section-copy">
+              We position assets as instruments of access, privacy, signal, memory, and optional commercial utility. The asset
+              should support your life and capital strategy, not compete with them.
+            </p>
+          </div>
+
+          <div class="container benefits-grid">
+            <article class="benefit-card reveal">
+              <h3>Elevated lifestyle</h3>
+              <p>Travel, hosting, and personal experience move to a more curated standard.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <h3>Executive networking</h3>
+              <p>Private settings often create stronger deal flow and more durable relationships than public environments.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <h3>Content and positioning</h3>
+              <p>Premium assets can become brand assets when integrated with discretion and strategic storytelling.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <h3>Family legacy</h3>
+              <p>Shared experiences and disciplined ownership habits can support multi-generational identity and stewardship.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <h3>Mobility and privacy</h3>
+              <p>Control over where, when, and how you move can become a real operating advantage.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <h3>Utilization options</h3>
+              <p>Some assets can offset cost or expand value through charter, leasing, event use, or carefully managed access.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section intelligence-section" id="intelligence">
+          <div class="container intelligence-layout">
+            <div class="frame-card reveal">
+              <p class="eyebrow">Buying is step one</p>
+              <h2>Ownership intelligence is the real differentiator.</h2>
+              <p>
+                Sophisticated owners think beyond delivery day. They plan acquisition criteria, structure, insurance,
+                budgeting, service schedules, staffing, storage, operating routines, monetization, and eventual exit.
+              </p>
+            </div>
+            <div class="checklist-card reveal">
+              <ul class="checklist">
+                <li>Acquisition strategy and due diligence</li>
+                <li>Legal structure and registration administration</li>
+                <li>Insurance, tax, and compliance awareness</li>
+                <li>Staffing, crew, vendors, and service partners</li>
+                <li>Storage, mooring, hangar, or garaging plans</li>
+                <li>Maintenance schedules and operating budgets</li>
+                <li>Monetization scenarios and idle-time strategy</li>
+                <li>Resale and long-term wealth planning</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section course-section" id="course">
+          <div class="container split-head reveal">
+            <div>
+              <p class="eyebrow">Flagship program</p>
+              <h2>The Luxury Asset Operator Program</h2>
+            </div>
+            <p class="section-copy">
+              A premium course for ambitious professionals, entrepreneurs, and high-income earners who want the lifestyle
+              without the amateur mistakes. Learn how to acquire, structure, manage, and potentially monetize premium assets like a disciplined operator.
+            </p>
+          </div>
+
+          <div class="container course-layout">
+            <div class="course-overview reveal">
+              <div class="pricing-toggle" id="pricingToggle">
+                <button class="toggle-option active" type="button" data-plan="course">Course Access</button>
+                <button class="toggle-option" type="button" data-plan="course-plus">Course + Advisory</button>
+              </div>
+
+              <div class="pricing-card">
+                <p class="card-kicker">Premium Enrollment</p>
+                <h3 id="pricingTitle">Luxury Asset Operator Program</h3>
+                <p class="pricing-amount" id="pricingAmount">$2,500</p>
+                <p class="pricing-detail" id="pricingDetail">Self-paced program, strategic frameworks, operating checklists, and monetization guidance.</p>
+                <a class="button button-gold button-full magnetic" href="{{ url_for('course') }}">Enroll Now</a>
+                <p class="pricing-note">Limited enrollment windows to preserve implementation support quality.</p>
+              </div>
+
+              <div class="who-grid">
+                <div class="panel-card">
+                  <h3>Who this is for</h3>
+                  <ul>
+                    <li>Professionals entering luxury ownership thoughtfully</li>
+                    <li>Entrepreneurs seeking prestige with structure</li>
+                    <li>Buyers comparing ownership, charter, and fractional paths</li>
+                  </ul>
+                </div>
+                <div class="panel-card muted">
+                  <h3>Who this is not for</h3>
+                  <ul>
+                    <li>Impulse buyers chasing status without discipline</li>
+                    <li>Anyone looking for unrealistic income promises</li>
+                    <li>Owners unwilling to manage risk and process</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="modules reveal">
+              <article class="module-card"><span>Module 1</span><h3>Luxury Asset Mindset &amp; Strategy</h3></article>
+              <article class="module-card"><span>Module 2</span><h3>Choosing the Right Asset</h3></article>
+              <article class="module-card"><span>Module 3</span><h3>Acquisition &amp; Due Diligence</h3></article>
+              <article class="module-card"><span>Module 4</span><h3>Ownership Structures &amp; Legal Considerations</h3></article>
+              <article class="module-card"><span>Module 5</span><h3>Operations, Maintenance &amp; Vendors</h3></article>
+              <article class="module-card"><span>Module 6</span><h3>Cost Management &amp; Budgeting</h3></article>
+              <article class="module-card"><span>Module 7</span><h3>Monetization &amp; Asset Utilization</h3></article>
+              <article class="module-card"><span>Module 8</span><h3>Long-Term Wealth, Brand, and Exit Strategy</h3></article>
+            </div>
+          </div>
+
+          <div class="container compare-grid">
+            <div class="panel-card reveal">
+              <h3>What you'll avoid</h3>
+              <ul>
+                <li>Overpaying for the wrong ownership model</li>
+                <li>Unexpected cost pressure and vendor chaos</li>
+                <li>Insurance, maintenance, and legal blind spots</li>
+                <li>Owning a prestige asset that quietly drains freedom</li>
+              </ul>
+            </div>
+            <div class="panel-card reveal">
+              <h3>What you'll gain</h3>
+              <ul>
+                <li>Structured acquisition criteria</li>
+                <li>Operational discipline and cost visibility</li>
+                <li>Confidence in ownership versus charter or fractional decisions</li>
+                <li>A luxury identity backed by systems and control</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section band-callout reveal">
+          <div class="container band-content">
+            <div>
+              <p class="eyebrow">Serious buyers only</p>
+              <h2>Private advisory is reserved for owners who want precise acquisition and operating guidance.</h2>
+            </div>
+            <a class="button button-ghost magnetic" href="{{ url_for('consultation') }}">Apply for Advisory</a>
+          </div>
+        </section>
+
+        <section class="section lead-section" id="lead-form">
+          <div class="container lead-layout">
+            <div class="lead-copy reveal">
+              <p class="eyebrow">Private inquiry</p>
+              <h2>Step into ownership with clarity, not guesswork.</h2>
+              <p>
+                Tell us what you are considering, what budget range you are working within, and what outcome matters most.
+                We will help you move from aspiration to structured action.
+              </p>
+            </div>
+
+            <div class="form-shell reveal">
+              {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                  {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">{{ message }}</div>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
+
+              <form class="lead-form" action="{{ url_for('submit_lead') }}" method="post" novalidate>
+                <input type="hidden" name="source_page" value="home" />
+                <div class="field-grid">
+                  <label>
+                    Full name
+                    <input type="text" name="full_name" value="{{ form_data.full_name }}" required />
+                    {% if form_errors.full_name %}<small class="error-text">{{ form_errors.full_name }}</small>{% endif %}
+                  </label>
+                  <label>
+                    Email
+                    <input type="email" name="email" value="{{ form_data.email }}" required />
+                    {% if form_errors.email %}<small class="error-text">{{ form_errors.email }}</small>{% endif %}
+                  </label>
+                  <label>
+                    Phone
+                    <input type="tel" name="phone" value="{{ form_data.phone }}" required />
+                    {% if form_errors.phone %}<small class="error-text">{{ form_errors.phone }}</small>{% endif %}
+                  </label>
+                  <label>
+                    Asset interest
+                    <select name="asset_interest" required>
+                      <option value="">Select an asset class</option>
+                      <option value="Yacht / Boat" {% if form_data.asset_interest == 'Yacht / Boat' %}selected{% endif %}>Yacht / Boat</option>
+                      <option value="Supercar" {% if form_data.asset_interest == 'Supercar' %}selected{% endif %}>Supercar</option>
+                      <option value="Aircraft" {% if form_data.asset_interest == 'Aircraft' %}selected{% endif %}>Aircraft</option>
+                      <option value="Luxury Property" {% if form_data.asset_interest == 'Luxury Property' %}selected{% endif %}>Luxury Property</option>
+                      <option value="Collectible Asset" {% if form_data.asset_interest == 'Collectible Asset' %}selected{% endif %}>Collectible Asset</option>
+                      <option value="Mixed Portfolio" {% if form_data.asset_interest == 'Mixed Portfolio' %}selected{% endif %}>Mixed Portfolio</option>
+                    </select>
+                    {% if form_errors.asset_interest %}<small class="error-text">{{ form_errors.asset_interest }}</small>{% endif %}
+                  </label>
+                  <label>
+                    Budget range
+                    <select name="budget_range" required>
+                      <option value="">Select a range</option>
+                      <option value="$50k - $250k" {% if form_data.budget_range == '$50k - $250k' %}selected{% endif %}>$50k - $250k</option>
+                      <option value="$250k - $1M" {% if form_data.budget_range == '$250k - $1M' %}selected{% endif %}>$250k - $1M</option>
+                      <option value="$1M - $5M" {% if form_data.budget_range == '$1M - $5M' %}selected{% endif %}>$1M - $5M</option>
+                      <option value="$5M - $15M" {% if form_data.budget_range == '$5M - $15M' %}selected{% endif %}>$5M - $15M</option>
+                      <option value="$15M+" {% if form_data.budget_range == '$15M+' %}selected{% endif %}>$15M+</option>
+                    </select>
+                    {% if form_errors.budget_range %}<small class="error-text">{{ form_errors.budget_range }}</small>{% endif %}
+                  </label>
+                  <label>
+                    Primary goal
+                    <select name="primary_goal" required>
+                      <option value="">Select a goal</option>
+                      <option value="Personal lifestyle" {% if form_data.primary_goal == 'Personal lifestyle' %}selected{% endif %}>Personal lifestyle</option>
+                      <option value="Brand positioning" {% if form_data.primary_goal == 'Brand positioning' %}selected{% endif %}>Brand positioning</option>
+                      <option value="Family legacy" {% if form_data.primary_goal == 'Family legacy' %}selected{% endif %}>Family legacy</option>
+                      <option value="Monetization strategy" {% if form_data.primary_goal == 'Monetization strategy' %}selected{% endif %}>Monetization strategy</option>
+                      <option value="Ownership education" {% if form_data.primary_goal == 'Ownership education' %}selected{% endif %}>Ownership education</option>
+                    </select>
+                    {% if form_errors.primary_goal %}<small class="error-text">{{ form_errors.primary_goal }}</small>{% endif %}
+                  </label>
+                </div>
+
+                <label>
+                  Message
+                  <textarea name="message" rows="5" required>{{ form_data.message }}</textarea>
+                  {% if form_errors.message %}<small class="error-text">{{ form_errors.message }}</small>{% endif %}
+                </label>
+
+                <button class="button button-gold button-full magnetic" type="submit">Request Strategic Guidance</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="section final-cta reveal">
+          <div class="container final-cta-card">
+            <p class="eyebrow">Final invitation</p>
+            <h2>Acquire prestige. Protect capital. Master the lifestyle.</h2>
+            <p>
+              If you want luxury ownership with sharper questions, stronger systems, and less financial noise,
+              the next step is simple: enroll in the program or apply for a private consultation.
+            </p>
+            <div class="hero-cta">
+              <a class="button button-gold magnetic" href="{{ url_for('course') }}">Explore the Course</a>
+              <a class="button button-ghost magnetic" href="{{ url_for('consultation') }}">Apply for Advisory</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <h3>JP Luxury Assets</h3>
+            <p>
+              Premium education and advisory for capital-aware ownership across yachts, supercars, aircraft,
+              luxury property, and collectible assets.
+            </p>
+          </div>
+          <div>
+            <h4>Quick links</h4>
+            <ul>
+              <li><a href="{{ url_for('home') }}">Home</a></li>
+              <li><a href="{{ url_for('course') }}">Course</a></li>
+              <li><a href="{{ url_for('consultation') }}">Consultation</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Calls to action</h4>
+            <ul>
+              <li><a href="{{ url_for('course') }}">Enroll in the Program</a></li>
+              <li><a href="{{ url_for('consultation') }}">Book Private Advisory</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Social</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="container footer-bottom">
+          <span>&copy; 2026 JP Luxury Assets. All rights reserved.</span>
+          <span>Privacy Policy | Terms of Use | Legal Notice</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>

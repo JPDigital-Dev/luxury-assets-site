@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Private Consultation | JP Luxury Assets</title>
+    <meta
+      name="description"
+      content="Apply for a private luxury asset consultation focused on acquisition strategy, structuring, operations, and monetization planning."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body data-page="{{ page_name }}">
+    <div class="site-shell">
+      <div class="ambient ambient-gold"></div>
+      <div class="ambient ambient-navy"></div>
+      <div class="noise-layer"></div>
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a class="brand" href="{{ url_for('home') }}">
+            <span class="brand-mark">JP</span>
+            <span class="brand-text"><strong>JP Luxury Assets</strong><em>Strategic Ownership Advisory</em></span>
+          </a>
+          <nav class="primary-nav">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('course') }}">Course</a>
+            <a href="{{ url_for('consultation') }}" class="is-active">Consultation</a>
+          </nav>
+          <a class="button button-gold desktop-only" href="#consult-lead">Apply Now</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="subpage-hero section">
+          <div class="container subpage-hero-grid">
+            <div class="reveal">
+              <p class="eyebrow">Private advisory</p>
+              <h1>Strategic guidance for serious luxury asset decisions.</h1>
+              <p class="hero-subhead">
+                Reserved for buyers and owners who want direct support on acquisition logic, ownership structure,
+                vendor ecosystem, operating controls, and monetization optionality.
+              </p>
+              <div class="exclusive-note">
+                <strong>Selective intake.</strong>
+                <span>Consulting applications are reviewed for fit, seriousness, and complexity.</span>
+              </div>
+            </div>
+            <div class="panel-card reveal">
+              <h2>Consulting can help with:</h2>
+              <ul>
+                <li>Should I buy, charter, lease, or go fractional?</li>
+                <li>How do I avoid overbuying relative to my real usage?</li>
+                <li>What operating costs and service systems should I plan for?</li>
+                <li>Can this asset support brand, network, or monetization goals?</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container card-grid three-up">
+            <article class="info-card reveal">
+              <h3>Acquisition strategy</h3>
+              <p>Clarify fit, budget, use case, hidden costs, and decision criteria before you enter the market emotionally.</p>
+            </article>
+            <article class="info-card reveal">
+              <h3>Operating structure</h3>
+              <p>Plan staffing, maintenance, storage, insurance, vendor control, and budget systems with fewer blind spots.</p>
+            </article>
+            <article class="info-card reveal">
+              <h3>Utilization and exit</h3>
+              <p>Evaluate monetization options, usage plans, and future resale logic so ownership serves a longer strategy.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section lead-section" id="consult-lead">
+          <div class="container lead-layout">
+            <div class="lead-copy reveal">
+              <p class="eyebrow">Apply for consultation</p>
+              <h2>Tell us the asset, budget, and decision you are facing.</h2>
+              <p>
+                The more specific your situation, the better we can assess fit for private advisory.
+                This form also helps us understand whether the course, consulting, or both are the right path.
+              </p>
+            </div>
+            <div class="form-shell reveal">
+              {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                  {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">{{ message }}</div>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
+              <form class="lead-form" action="{{ url_for('submit_lead') }}" method="post" novalidate>
+                <input type="hidden" name="source_page" value="consultation" />
+                <div class="field-grid">
+                  <label>Full name<input type="text" name="full_name" value="{{ form_data.full_name }}" required />{% if form_errors.full_name %}<small class="error-text">{{ form_errors.full_name }}</small>{% endif %}</label>
+                  <label>Email<input type="email" name="email" value="{{ form_data.email }}" required />{% if form_errors.email %}<small class="error-text">{{ form_errors.email }}</small>{% endif %}</label>
+                  <label>Phone<input type="tel" name="phone" value="{{ form_data.phone }}" required />{% if form_errors.phone %}<small class="error-text">{{ form_errors.phone }}</small>{% endif %}</label>
+                  <label>Asset interest<select name="asset_interest" required><option value="">Select an asset class</option><option value="Yacht / Boat" {% if form_data.asset_interest == 'Yacht / Boat' %}selected{% endif %}>Yacht / Boat</option><option value="Supercar" {% if form_data.asset_interest == 'Supercar' %}selected{% endif %}>Supercar</option><option value="Aircraft" {% if form_data.asset_interest == 'Aircraft' %}selected{% endif %}>Aircraft</option><option value="Luxury Property" {% if form_data.asset_interest == 'Luxury Property' %}selected{% endif %}>Luxury Property</option><option value="Collectible Asset" {% if form_data.asset_interest == 'Collectible Asset' %}selected{% endif %}>Collectible Asset</option><option value="Mixed Portfolio" {% if form_data.asset_interest == 'Mixed Portfolio' %}selected{% endif %}>Mixed Portfolio</option></select>{% if form_errors.asset_interest %}<small class="error-text">{{ form_errors.asset_interest }}</small>{% endif %}</label>
+                  <label>Budget range<select name="budget_range" required><option value="">Select a range</option><option value="$50k - $250k" {% if form_data.budget_range == '$50k - $250k' %}selected{% endif %}>$50k - $250k</option><option value="$250k - $1M" {% if form_data.budget_range == '$250k - $1M' %}selected{% endif %}>$250k - $1M</option><option value="$1M - $5M" {% if form_data.budget_range == '$1M - $5M' %}selected{% endif %}>$1M - $5M</option><option value="$5M - $15M" {% if form_data.budget_range == '$5M - $15M' %}selected{% endif %}>$5M - $15M</option><option value="$15M+" {% if form_data.budget_range == '$15M+' %}selected{% endif %}>$15M+</option></select>{% if form_errors.budget_range %}<small class="error-text">{{ form_errors.budget_range }}</small>{% endif %}</label>
+                  <label>Primary goal<select name="primary_goal" required><option value="">Select a goal</option><option value="Personal lifestyle" {% if form_data.primary_goal == 'Personal lifestyle' %}selected{% endif %}>Personal lifestyle</option><option value="Brand positioning" {% if form_data.primary_goal == 'Brand positioning' %}selected{% endif %}>Brand positioning</option><option value="Family legacy" {% if form_data.primary_goal == 'Family legacy' %}selected{% endif %}>Family legacy</option><option value="Monetization strategy" {% if form_data.primary_goal == 'Monetization strategy' %}selected{% endif %}>Monetization strategy</option><option value="Ownership education" {% if form_data.primary_goal == 'Ownership education' %}selected{% endif %}>Ownership education</option></select>{% if form_errors.primary_goal %}<small class="error-text">{{ form_errors.primary_goal }}</small>{% endif %}</label>
+                </div>
+                <label>Message<textarea name="message" rows="5" required>{{ form_data.message }}</textarea>{% if form_errors.message %}<small class="error-text">{{ form_errors.message }}</small>{% endif %}</label>
+                <button class="button button-gold button-full magnetic" type="submit">Submit Private Inquiry</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-bottom single-line">
+          <span>&copy; 2026 JP Luxury Assets. All rights reserved.</span>
+          <a href="{{ url_for('home') }}">Return to Home</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | JP Luxury Assets</title>
+    <meta
+      name="description"
+      content="Thank you for your inquiry. JP Luxury Assets has received your submission."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body data-page="{{ page_name }}">
+    <div class="site-shell">
+      <div class="ambient ambient-gold"></div>
+      <div class="ambient ambient-navy"></div>
+      <div class="noise-layer"></div>
+      <main class="thank-you-page">
+        <section class="section">
+          <div class="container">
+            <div class="final-cta-card reveal active thank-you-card">
+              <p class="eyebrow">Inquiry received</p>
+              <h1>Thank you. Your private inquiry is now under review.</h1>
+              <p>
+                We have received your details and will review your submission with a focus on fit, timing, and the right next step.
+                In the meantime, you can return to the site and explore the course or consultation pathways.
+              </p>
+              <div class="hero-cta">
+                <a class="button button-gold magnetic" href="{{ url_for('course') }}">View the Course</a>
+                <a class="button button-ghost magnetic" href="{{ url_for('home') }}">Back to Homepage</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>
